@@ -21,7 +21,7 @@ $( "#addgif" ).on( "click", function (){
 
 function displayGifs() {
 	var gif = $( this ).attr( "data-name" );
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=20&api_key=dc6zaTOxFJmzC";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=6&api_key=dc6zaTOxFJmzC";
 
 		$.ajax( {url: queryURL, method: "GET" } ).done( function ( response ) {
 			console.log(response.data);
