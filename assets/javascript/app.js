@@ -1,5 +1,5 @@
 
-var gifs = ["parkor fail", "wtf", "pogo fail", "bicycle fail", "kook slam", "cool", "weird", "random", "high five"];
+var gifs = ["Happy Dogs", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "random", "high five"];
 function makeButtons(){    /*    */
 	$('#buttonsView').empty();
 	for (var i = 0; i < gifs.length; i++){
