@@ -1,4 +1,4 @@
-var gifs = ["Happy Dogs", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "random", "high five"];
+var gifs = ["Will Ferrel", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "random", "high five"];
 
 function makeButtons() { /*    */
 	$('#buttonsView').empty();
@@ -13,16 +13,31 @@ function makeButtons() { /*    */
 $("#addgif").on("click", function () {
 
 	var gif = $("#gif-input").val().trim();
+	console.log('gif:', gif)
+	if(gif.length === 0){
+		alert("you didnt type anything")
+		return
+	}
 	gifs.push(gif);
 	makeButtons();
+	
 	return false;
+	
 })
 
-
+var oneClick
 function displayGifs() {
 	var gif = $(this).attr("data-name");
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=20&api_key=dc6zaTOxFJmzC";
-
+// 
+if ( oneClick == gif ) {
+	alert('make a new button to see more gifs!');
+	$(this).fadeOut(1000)
+	return;
+}
+// 
+oneClick = gif 
+// 
 	$.ajax({
 		url: queryURL,
 		method: "GET"
