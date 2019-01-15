@@ -60,6 +60,7 @@ form {
 	text-align: justify;
 	overflow-wrap: break-word;
 	max-width: 280px;
+	margin-top: 20px;
 }
 
 .gifs {
@@ -115,7 +116,15 @@ button:visited {
 	box-shadow: 3px 3px rgba(0, 0, 0, .5);
 	cursor: grabbing;
 }
-
+.btn:focus {
+	outline: none;
+  }
+  .button:focus {
+	outline: none;
+  }
+  .btn:focus {
+	outline: none;
+  }
 .btn,
 .prompt {
 	background: rgba(255, 255, 255, .2);
@@ -139,6 +148,7 @@ button:visited {
 .btn:hover {
 	background: rgba(0, 0, 0, .6);
 }
+
 
 #top,
 #bottom,

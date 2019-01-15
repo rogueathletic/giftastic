@@ -1,4 +1,14 @@
+$( document ).ready(function() {
+
+	console.log( "ready!" );
+	// $("#buttonsView").hide()
+});
+
 var gifs = ["Will Ferrel", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "random", "high five"];
+
+
+
+
 
 function makeButtons() { /*    */
 	$('#buttonsView').empty();
@@ -7,17 +17,21 @@ function makeButtons() { /*    */
 		a.addClass('gif-button');
 		a.attr('data-name', gifs[i]);
 		a.text(gifs[i]);
-		$('#buttonsView').append(a);
-	}
+		$('#buttonsView').prepend(a);
+		
+	} return false
 }
 $("#addgif").on("click", function () {
-
+	// $("#buttonsView").show()
 	var gif = $("#gif-input").val().trim();
 	console.log('gif:', gif)
 	if(gif.length === 0){
-		alert("you didnt type anything")
-		return
+		$(this).require()
+		return false;
+		
 	}
+	$(gif).show()
+	
 	gifs.push(gif);
 	makeButtons();
 	
@@ -32,10 +46,10 @@ function displayGifs() {
 // 
 if ( oneClick == gif ) {
 	alert('make a new button to see more gifs!');
-	$(this).fadeOut(1000)
+	$(this).hide()
 	return;
 }
-// 
+
 oneClick = gif 
 // 
 	$.ajax({
@@ -60,6 +74,8 @@ oneClick = gif
 
 			gifDiv.prepend(gifGif)
 			$("#gifsView").prepend(gifDiv);
+			
+			
 		}
 	});
 
