@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+	makeButtons();
 	console.log( "ready!" );
 	// $("#buttonsView").hide()
 });
@@ -19,7 +19,7 @@ function makeButtons() { /*    */
 		a.text(gifs[i]);
 		$('#buttonsView').prepend(a);
 		
-	} return false
+	} return true
 }
 $("#addgif").on("click", function () {
 	// $("#buttonsView").show()
@@ -46,7 +46,8 @@ function displayGifs() {
 // 
 if ( oneClick == gif ) {
 	alert('make a new button to see more gifs!');
-	$(this).hide()
+	$(this).remove()
+	
 	return;
 }
 
@@ -92,4 +93,4 @@ $(document).on('click', '.gif', function () {
 	};
 });
 $(document).on("click", ".gif-button", displayGifs);
-makeButtons();
+
