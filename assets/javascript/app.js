@@ -18,7 +18,7 @@ function makeButtons() { /*    */
 		a.attr('data-name', gifs[i]);
 		a.text(gifs[i]);
 		$('#buttonsView').prepend(a);
-		event.preventDefault()
+	
 	} return true
 }
 $("#addgif").on("click", function () {
