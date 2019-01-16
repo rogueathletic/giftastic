@@ -94,3 +94,7 @@ $(document).on('click', '.gif', function () {
 });
 $(document).on("click", ".gif-button", displayGifs);
 
+$("#addgif").click(
+    function(){
+        $("#gif-input").val('');
+    });
