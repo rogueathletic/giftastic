@@ -4,7 +4,7 @@ $( document ).ready(function() {
 	// $("#buttonsView").hide()
 });
 
-var gifs = ["Will Ferrel", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "random", "high five"];
+var gifs = ["Ricky Bobby", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "outsideisfree", "high five"];
 
 
 
