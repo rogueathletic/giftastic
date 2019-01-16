@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	makeButtons();
+	makeButtons(gifs);
 	console.log( "ready!" );
 	// $("#buttonsView").hide()
 });
@@ -10,13 +10,13 @@ var gifs = ["Will Ferrel", "Camping", "Hiking", "Adventure", "Epic", "Awesome", 
 
 
 
-function makeButtons() { /*    */
-	$('#buttonsView').empty();
-	for (var i = 0; i < gifs.length; i++) {
+function makeButtons(arr) { /*    */
+	
+	for (var i = 0; i < arr.length; i++) {
 		var a = $('<button>')
 		a.addClass('gif-button');
-		a.attr('data-name', gifs[i]);
-		a.text(gifs[i]);
+		a.attr('data-name', arr[i]);
+		a.text(arr[i]);
 		$('#buttonsView').prepend(a);
 	
 	} return true
@@ -32,8 +32,8 @@ $("#addgif").on("click", function () {
 	}
 	$(gif).show()
 	
-	gifs.push(gif);
-	makeButtons();
+	//gifs.push(gif);
+	makeButtons([gif]);
 	
 	return false;
 	
