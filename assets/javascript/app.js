@@ -4,7 +4,7 @@ $( document ).ready(function() {
 	// $("#buttonsView").hide()
 });
 
-var gifs = ["Ricky Bobby", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "outsideisfree", "high five"];
+var gifs = ["Ricky Bobby", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "drift", "high five"];
 
 
 
