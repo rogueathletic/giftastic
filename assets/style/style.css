@@ -74,10 +74,19 @@ form {
 
 .gif {
 	cursor: grab;
+	margin: 10px;
+	border-radius: 20px;
+	border: 3px silver;
+	min-width: 200px;
+	min-height: 200px;
+	max-width: 200px;
+	max-height: 200px;
+	box-shadow: 8px 8px rgba(0, 0, 0, .5);
 }
 
 .gif:active {
 	cursor: grabbing;
+	box-shadow: 6px 6px rgba(41, 40, 40, 0.5);
 }
 
 img.squiggle {
