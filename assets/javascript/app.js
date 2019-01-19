@@ -1,58 +1,56 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 	makeButtons(gifs);
-	console.log( "ready!" );
+	console.log("ready!");
 	// $("#buttonsView").hide()
 });
 
-var gifs = ["Ricky Bobby", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "drift", "high five"];
-
-
-
-
+var gifs = ["Will Ferrel", "Camping", "Hiking", "Adventure", "Epic", "Awesome", "Road Cycling", "random", "high five"];
 
 function makeButtons(arr) { /*    */
-	
+
 	for (var i = 0; i < arr.length; i++) {
 		var a = $('<button>')
 		a.addClass('gif-button');
 		a.attr('data-name', arr[i]);
 		a.text(arr[i]);
 		$('#buttonsView').prepend(a);
-	
-	} return true
+
+	}
+	return true
 }
 $("#addgif").on("click", function () {
 	// $("#buttonsView").show()
 	var gif = $("#gif-input").val().trim();
 	console.log('gif:', gif)
-	if(gif.length === 0){
+	if (gif.length === 0) {
 		$(this).require()
 		return false;
-		
+
 	}
 	$(gif).show()
-	
+
 	//gifs.push(gif);
 	makeButtons([gif]);
-	
+
 	return false;
-	
+
 })
 
 var oneClick
+
 function displayGifs() {
 	var gif = $(this).attr("data-name");
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=20&api_key=dc6zaTOxFJmzC";
-// 
-if ( oneClick == gif ) {
-	alert('make a new button to see more gifs!');
-	$(this).remove()
-	
-	return;
-}
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=10&api_key=AmDXnR2HJTxdIlJerFCshqj8NdiptK8E";
+	// 
+	if (oneClick == gif) {
+		alert('make a new button to see more gifs!');
+		$(this).remove()
 
-oneClick = gif 
-// 
+		return;
+	}
+
+	oneClick = gif
+	// 
 	$.ajax({
 		url: queryURL,
 		method: "GET"
@@ -75,8 +73,8 @@ oneClick = gif
 
 			gifDiv.prepend(gifGif)
 			$("#gifsView").prepend(gifDiv);
-			
-			
+
+
 		}
 	});
 
@@ -95,6 +93,6 @@ $(document).on('click', '.gif', function () {
 $(document).on("click", ".gif-button", displayGifs);
 
 $("#addgif").click(
-    function(){
-        $("#gif-input").val('');
-    });
+	function () {
+		$("#gif-input").val('');
+	});
